@@ -7,22 +7,28 @@ export default function Home() {
 
 
   useEffect(() => {
-    window.OneSignal = window.OneSignal || [];
+  //   window.OneSignal = window.OneSignal || [];
     
+  // OneSignal.push(function() {
+  //   OneSignal.init({
+  //     appId: "b5b2ecf6-847a-427d-bfca-bad2804be000",
+  //     safari_web_id: "web.onesignal.auto.092506a7-b452-4a06-a822-c1d343884087",
+  //     notifyButton: {
+  //       enable: true,
+  //     },
+  //     // subdomainName: "push-not",
+  //   });
+  // },[]);
+
+  //   return () => {
+  //       window.OneSignal = undefined;
+  //   };
+  window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
       appId: "b5b2ecf6-847a-427d-bfca-bad2804be000",
-      safari_web_id: "web.onesignal.auto.092506a7-b452-4a06-a822-c1d343884087",
-      notifyButton: {
-        enable: true,
-      },
-      // subdomainName: "push-not",
     });
-  },[]);
-
-    return () => {
-        window.OneSignal = undefined;
-    };
+  });
 }, [])
 
 
